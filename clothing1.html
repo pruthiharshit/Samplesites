@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>मनमोहे — Indian Women's Fashion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --burgundy: #2D0A1F;
+      --deep-rose: #5C1A33;
+      --gold: #C9A84C;
+      --gold-light: #E8C97E;
+      --ivory: #FAF6EE;
+      --warm-cream: #F5EEE0;
+      --rose-mist: #E8B4B8;
+      --charcoal: #1A1A2E;
+      --text-muted: #7a6a5a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s, padding 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(45, 10, 31, 0.96);
+      backdrop-filter: blur(12px);
+      padding: 14px 60px;
+    }
+    .nav-logo {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ivory);
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--burgundy) !important;
+      padding: 10px 24px;
+      opacity: 1 !important;
+      border-radius: 2px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: var(--burgundy);
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 60px 80px 80px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .hero-hindi {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(4rem, 7vw, 7rem);
+      font-weight: 700;
+      color: var(--ivory);
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+    .hero-english {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 2vw, 1.6rem);
+      font-style: italic;
+      color: var(--rose-mist);
+      margin-bottom: 36px;
+      letter-spacing: 0.04em;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(250, 246, 238, 0.72);
+      max-width: 400px;
+      margin-bottom: 52px;
+    }
+    .hero-actions { display: flex; gap: 16px; align-items: center; }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--burgundy);
+      padding: 16px 36px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-ghost {
+      color: var(--ivory);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(250,246,238,0.4);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image-wrap {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #5C1A33 0%, #2D0A1F 50%, #1a0812 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Fabric shimmer overlay */
+    .hero-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 30% 60%, rgba(201,168,76,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(232,180,184,0.12) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-fabric-art {
+      width: 90%;
+      height: 90%;
+      position: relative;
+    }
+    /* Animated saree drape SVG */
+    .drape-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-divider {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+
+    /* Decorative mandala ring */
+    .mandala-ring {
+      position: absolute;
+      width: 420px; height: 420px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      animation: slowSpin 60s linear infinite;
+    }
+    .mandala-ring::after {
+      content: '';
+      position: absolute;
+      inset: 30px;
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 50%;
+    }
+    @keyframes slowSpin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    /* Model silhouette */
+    .saree-model {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 340px;
+      animation: floatUp 1.2s ease-out forwards;
+      opacity: 0;
+    }
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateX(-50%) translateY(30px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* Scroll indicator */
+    .scroll-cue {
+      position: absolute;
+      bottom: 36px; left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(250,246,238,0.45);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-family: 'Lato', sans-serif;
+    }
+    .scroll-line {
+      width: 40px; height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    /* ─── MARQUEE STRIP ─── */
+    .marquee-strip {
+      background: var(--gold);
+      padding: 14px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee-inner {
+      display: inline-flex;
+      gap: 0;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-item {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--burgundy);
+      padding: 0 48px;
+      letter-spacing: 0.06em;
+    }
+    .marquee-dot {
+      color: var(--burgundy);
+      opacity: 0.5;
+    }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 100px 80px; }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      font-family: 'Lato', sans-serif;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--burgundy);
+      margin-bottom: 20px;
+    }
+    .section-sub {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    /* ─── CATEGORIES ─── */
+    .categories {
+      background: var(--warm-cream);
+    }
+    .cat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 60px;
+    }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .cat-card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+    }
+    .cat-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.6s ease;
+    }
+    .cat-card:hover .cat-bg { transform: scale(1.06); }
+    .cat-card:nth-child(1) .cat-bg { background: linear-gradient(160deg, #7B2D4A 0%, #2D0A1F 100%); }
+    .cat-card:nth-child(2) .cat-bg { background: linear-gradient(160deg, #4A1A35 0%, #8B1A4A 100%); }
+    .cat-card:nth-child(3) .cat-bg { background: linear-gradient(160deg, #2D0A1F 0%, #6B2540 100%); }
+
+    .cat-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+    }
+    .cat-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 36px 28px;
+      background: linear-gradient(to top, rgba(20,5,15,0.85) 0%, transparent 100%);
+    }
+    .cat-hindi {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ivory);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .cat-en {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--gold);
+    }
+    .cat-count {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(250,246,238,0.55);
+      font-family: 'Lato', sans-serif;
+    }
+    .cat-icon-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ─── FEATURED COLLECTION ─── */
+    .featured { background: var(--ivory); }
+    .collection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .product-card {
+      position: relative;
+      cursor: pointer;
+    }
+    .product-img {
+      aspect-ratio: 3/4;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .product-img-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .product-img-bg { transform: scale(1.04); }
+    .p1 { background: linear-gradient(145deg, #7B2D4A, #3D1525); }
+    .p2 { background: linear-gradient(145deg, #1A3A5C, #0D2040); }
+    .p3 { background: linear-gradient(145deg, #3D5C1A, #1E2E0D); }
+    .p4 { background: linear-gradient(145deg, #5C3A1A, #2E1D0D); }
+    .p5 { background: linear-gradient(145deg, #4A1A5C, #250D2E); }
+    .p6 { background: linear-gradient(145deg, #5C1A2D, #2E0D16); }
+    .p7 { background: linear-gradient(145deg, #1A4A5C, #0D252E); }
+    .p8 { background: linear-gradient(145deg, #4A3A1A, #251D0D); }
+
+    .product-badge {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: var(--gold);
+      color: var(--burgundy);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      font-family: 'Lato', sans-serif;
+    }
+    .product-wish {
+      position: absolute;
+      top: 12px; right: 12px;
+      width: 32px; height: 32px;
+      background: rgba(250,246,238,0.15);
+      backdrop-filter: blur(4px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .product-wish:hover { background: rgba(201,168,76,0.3); }
+    .product-wish svg { width: 14px; height: 14px; fill: none; stroke: white; stroke-width: 1.5; }
+
+    /* Floating saree fabric element inside product card */
+    .fabric-element {
+      position: absolute;
+      inset: 0;
+      opacity: 0.25;
+    }
+
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+    .product-type {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      font-family: 'Lato', sans-serif;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--burgundy);
+    }
+    .product-price-old {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-right: 8px;
+    }
+
+    /* ─── STORY / ABOUT ─── */
+    .story {
+      background: var(--burgundy);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      padding: 0;
+    }
+    .story-text {
+      padding: 100px 70px 100px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .story-text .section-label { color: var(--gold); }
+    .story-text .section-title { color: var(--ivory); }
+    .story-text .section-sub { color: rgba(250,246,238,0.68); max-width: 440px; }
+    .story-quote {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 36px 0 20px;
+      line-height: 1.3;
+    }
+    .story-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: rgba(250,246,238,0.55);
+      font-family: 'Lato', sans-serif;
+      letter-spacing: 0.08em;
+    }
+    .story-visual {
+      position: relative;
+      background: linear-gradient(135deg, #3D1525 0%, #5C1A33 100%);
+      overflow: hidden;
+    }
+    .story-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 40% 50%, rgba(201,168,76,0.22) 0%, transparent 65%);
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials {
+      background: var(--warm-cream);
+      text-align: center;
+    }
+    .test-header { margin-bottom: 60px; }
+    .test-header .section-title { margin: 0 auto; }
+    .test-header .section-sub { margin: 16px auto 0; text-align: center; }
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .test-card {
+      background: white;
+      padding: 40px 32px;
+      text-align: left;
+      position: relative;
+    }
+    .test-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px; left: 28px;
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.25;
+      line-height: 1;
+    }
+    .test-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 20px;
+    }
+    .star { color: var(--gold); font-size: 0.85rem; }
+    .test-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #4a4040;
+      margin-bottom: 28px;
+    }
+    .test-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .test-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+    }
+    .av1 { background: linear-gradient(135deg, #7B2D4A, #2D0A1F); }
+    .av2 { background: linear-gradient(135deg, #1A3A5C, #2D0A1F); }
+    .av3 { background: linear-gradient(135deg, #3D5C1A, #2D0A1F); }
+    .test-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    .test-city { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ─── NEWSLETTER ─── */
+    .newsletter {
+      background: var(--charcoal);
+      text-align: center;
+      padding: 90px 80px;
+    }
+    .newsletter-inner { max-width: 600px; margin: 0 auto; }
+    .newsletter .section-label { text-align: center; }
+    .newsletter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--ivory);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .newsletter-sub {
+      color: rgba(250,246,238,0.55);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .email-form {
+      display: flex;
+      gap: 0;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .email-input {
+      flex: 1;
+      padding: 16px 20px;
+      background: rgba(250,246,238,0.08);
+      border: 1px solid rgba(250,246,238,0.2);
+      border-right: none;
+      color: var(--ivory);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-input::placeholder { color: rgba(250,246,238,0.35); }
+    .email-input:focus { border-color: var(--gold); }
+    .email-btn {
+      background: var(--gold);
+      color: var(--burgundy);
+      padding: 16px 28px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .email-btn:hover { background: var(--gold-light); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--burgundy);
+      padding: 80px 80px 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+    .footer-brand .nav-logo { display: block; margin-bottom: 20px; font-size: 2rem; }
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: rgba(250,246,238,0.55);
+      max-width: 300px;
+    }
+    .footer-col-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a {
+      font-size: 0.88rem;
+      color: rgba(250,246,238,0.58);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid rgba(250,246,238,0.1);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(250,246,238,0.35);
+      font-family: 'Lato', sans-serif;
+    }
+    .social-links { display: flex; gap: 16px; }
+    .social-link {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(250,246,238,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: rgba(250,246,238,0.55);
+      font-size: 0.82rem;
+      font-family: 'Lato', sans-serif;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in:nth-child(2) { transition-delay: 0.1s; }
+    .fade-in:nth-child(3) { transition-delay: 0.2s; }
+    .fade-in:nth-child(4) { transition-delay: 0.3s; }
+
+    /* ─── GOLD DIVIDER ─── */
+    .gold-divider {
+      width: 56px; height: 2px;
+      background: var(--gold);
+      margin: 28px 0;
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 120px 32px 80px; }
+      section { padding: 72px 32px; }
+      .cat-grid, .product-grid { grid-template-columns: 1fr 1fr; }
+      .story { grid-template-columns: 1fr; }
+      .story-visual { height: 300px; }
+      .test-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .email-form { flex-direction: column; }
+      .email-input { border-right: 1px solid rgba(250,246,238,0.2); border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">मनमोहे</a>
+  <ul class="nav-links">
+    <li><a href="#categories">Collections</a></li>
+    <li><a href="#featured">Shop</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#newsletter" class="nav-cta">Book a Styling</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">New Collection 2024 — Festive Edit</p>
+    <h1 class="hero-hindi">मनमोहे</h1>
+    <p class="hero-english">— to captivate the heart</p>
+    <div class="gold-divider"></div>
+    <p class="hero-desc">Where every thread tells a story. Handcrafted Indian sarees and dresses for the woman who carries tradition with modern grace.</p>
+    <div class="hero-actions">
+      <a href="#featured" class="btn-primary">Explore Collection</a>
+      <a href="#story" class="btn-ghost">Our Craft</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-image-wrap">
+      <div class="hero-divider"></div>
+      <div class="mandala-ring"></div>
+      <!-- Decorative saree SVG -->
+      <svg class="saree-model" viewBox="0 0 340 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Body silhouette -->
+        <ellipse cx="170" cy="100" rx="50" ry="55" fill="#7B2D4A" opacity="0.8"/>
+        <!-- Head -->
+        <ellipse cx="170" cy="52" rx="30" ry="34" fill="#C9A84C" opacity="0.6"/>
+        <!-- Dupatta flow -->
+        <path d="M120,90 Q80,180 60,280 Q50,340 80,400 Q110,440 130,460" stroke="#C9A84C" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <!-- Saree pleats body -->
+        <path d="M140,160 Q100,200 90,280 Q85,340 100,440 Q120,490 170,510 Q220,490 240,440 Q255,340 250,280 Q240,200 200,160 Z" fill="#7B2D4A" opacity="0.7"/>
+        <!-- Pallu drape -->
+        <path d="M200,160 Q240,140 280,100 Q300,80 310,60" stroke="#C9A84C" stroke-width="18" fill="none" stroke-linecap="round" opacity="0.55"/>
+        <path d="M200,160 Q250,150 290,130 Q315,115 330,90" stroke="#E8B4B8" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.35"/>
+        <!-- Gold border accents -->
+        <path d="M140,160 Q100,200 90,280" stroke="#C9A84C" stroke-width="3" fill="none" opacity="0.8" stroke-dasharray="6,4"/>
+        <path d="M200,160 Q240,200 250,280" stroke="#C9A84C" stroke-width="3" fill="none" opacity="0.8" stroke-dasharray="6,4"/>
+        <!-- Embroidery dots on pallu -->
+        <circle cx="250" cy="148" r="3" fill="#C9A84C" opacity="0.8"/>
+        <circle cx="270" cy="133" r="2.5" fill="#C9A84C" opacity="0.7"/>
+        <circle cx="288" cy="122" r="2" fill="#E8B4B8" opacity="0.7"/>
+        <circle cx="305" cy="108" r="2.5" fill="#C9A84C" opacity="0.6"/>
+        <!-- Bangles -->
+        <ellipse cx="105" cy="290" rx="14" ry="6" fill="none" stroke="#C9A84C" stroke-width="3" opacity="0.7"/>
+        <ellipse cx="105" cy="285" rx="14" ry="6" fill="none" stroke="#E8B4B8" stroke-width="2" opacity="0.6"/>
+        <!-- Bindi -->
+        <circle cx="170" cy="36" r="4" fill="#C9A84C" opacity="0.9"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span class="scroll-line"></span>
+    Scroll to Explore
+  </div>
+</section>
+
+<!-- ─── MARQUEE ─── -->
+<div class="marquee-strip">
+  <div class="marquee-inner" aria-hidden="true">
+    <span class="marquee-item">साड़ी <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Handwoven Banarasi <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">लहंगा चोली <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Kanjivaram Silk <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">कुर्ती सेट <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Chanderi Cotton <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">अनारकली सूट <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Zardozi Embroidery <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">साड़ी <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Handwoven Banarasi <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">लहंगा चोली <span class="marquue-dot">◆</span></span>
+    <span class="marquee-item">Kanjivaram Silk <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">कुर्ती सेट <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Chanderi Cotton <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">अनारकली सूट <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Zardozi Embroidery <span class="marquee-dot">◆</span></span>
+  </div>
+</div>
+
+<!-- ─── CATEGORIES ─── -->
+<section class="categories" id="categories">
+  <div class="cat-header">
+    <div>
+      <p class="section-label">Browse by Category</p>
+      <h2 class="section-title">Dress the Occasion</h2>
+    </div>
+    <a href="#" class="btn-ghost" style="color: var(--burgundy); border-color: var(--burgundy);">View All Categories</a>
+  </div>
+
+  <div class="cat-grid">
+    <!-- Sarees -->
+    <div class="cat-card fade-in">
+      <div class="cat-bg"></div>
+      <svg class="cat-pattern" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="paisley" x="0" y="0" width="60" height="80" patternUnits="userSpaceOnUse">
+            <path d="M30,10 Q45,5 48,20 Q52,35 40,45 Q30,50 25,40 Q18,28 30,10 Z" fill="none" stroke="white" stroke-width="1"/>
+            <circle cx="30" cy="10" r="4" fill="none" stroke="white" stroke-width="0.8"/>
+            <path d="M20,50 Q15,65 25,70 Q35,72 38,60" fill="none" stroke="white" stroke-width="0.6"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="600" fill="url(#paisley)"/>
+      </svg>
+      <div class="cat-icon-wrap">
+        <svg width="120" height="200" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.5">
+          <path d="M60,20 Q80,10 95,25 Q105,40 90,60 Q75,75 60,70 Q40,65 35,45 Q30,25 60,20Z" stroke="#C9A84C" stroke-width="2" fill="none"/>
+          <path d="M35,45 Q20,80 30,130 Q40,170 60,185 Q80,170 90,130 Q100,80 95,60" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.7"/>
+          <path d="M35,45 Q10,55 8,90 Q6,120 20,140" stroke="#E8B4B8" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.6"/>
+        </svg>
+      </div>
+      <span class="cat-count">240+ Styles</span>
+      <div class="cat-info">
+        <span class="cat-hindi">साड़ियाँ</span>
+        <span class="cat-en">Sarees — Silk, Georgette & Cotton</span>
+      </div>
+    </div>
+
+    <!-- Lehengas -->
+    <div class="cat-card fade-in" style="margin-top: 40px;">
+      <div class="cat-bg"></div>
+      <svg class="cat-pattern" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="floral" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+            <circle cx="25" cy="25" r="12" fill="none" stroke="white" stroke-width="0.8"/>
+            <circle cx="25" cy="25" r="4" fill="none" stroke="white" stroke-width="0.8"/>
+            <line x1="25" y1="13" x2="25" y2="8" stroke="white" stroke-width="0.6"/>
+            <line x1="25" y1="37" x2="25" y2="42" stroke="white" stroke-width="0.6"/>
+            <line x1="13" y1="25" x2="8" y2="25" stroke="white" stroke-width="0.6"/>
+            <line x1="37" y1="25" x2="42" y2="25" stroke="white" stroke-width="0.6"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="600" fill="url(#floral)"/>
+      </svg>
+      <div class="cat-icon-wrap">
+        <svg width="130" height="190" viewBox="0 0 130 190" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.5">
+          <path d="M65,20 Q80,15 88,28 Q92,40 80,52 Q68,60 55,55 Q42,48 44,32 Q46,18 65,20Z" stroke="#C9A84C" stroke-width="2" fill="none"/>
+          <path d="M44,55 L44,90 L10,190 L120,190 L86,90 L86,55" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+          <path d="M10,190 Q65,170 120,190" stroke="#C9A84C" stroke-width="2" fill="none"/>
+          <path d="M20,155 Q65,140 110,155" stroke="#E8B4B8" stroke-width="1.2" fill="none" opacity="0.7"/>
+          <path d="M30,130 Q65,118 100,130" stroke="#E8B4B8" stroke-width="1" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+      <span class="cat-count">185+ Styles</span>
+      <div class="cat-info">
+        <span class="cat-hindi">लहंगा चोली</span>
+        <span class="cat-en">Lehenga Choli — Bridal & Festive</span>
+      </div>
+    </div>
+
+    <!-- Suits & Kurtis -->
+    <div class="cat-card fade-in">
+      <div class="cat-bg"></div>
+      <svg class="cat-pattern" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="chevron" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M0,20 L20,0 L40,20 L20,40 Z" fill="none" stroke="white" stroke-width="0.7"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="600" fill="url(#chevron)"/>
+      </svg>
+      <div class="cat-icon-wrap">
+        <svg width="110" height="200" viewBox="0 0 110 200" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.5">
+          <path d="M55,20 Q68,15 74,25 Q78,35 72,46 Q64,54 55,52 Q45,50 40,40 Q36,28 46,20 Q52,16 55,20Z" stroke="#C9A84C" stroke-width="2" fill="none"/>
+          <path d="M30,55 L22,90 L22,190 L88,190 L88,90 L80,55" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+          <path d="M30,55 Q15,60 10,75 L20,120" stroke="#C9A84C" stroke-width="2" fill="none"/>
+          <path d="M80,55 Q95,60 100,75 L90,120" stroke="#C9A84C" stroke-width="2" fill="none"/>
+          <line x1="22" y1="115" x2="88" y2="115" stroke="#E8B4B8" stroke-width="1.5" opacity="0.7"/>
+          <path d="M25,130 Q55,122 85,130" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.5" stroke-dasharray="4,3"/>
+          <path d="M25,145 Q55,137 85,145" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.5" stroke-dasharray="4,3"/>
+          <path d="M25,160 Q55,152 85,160" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.5" stroke-dasharray="4,3"/>
+        </svg>
+      </div>
+      <span class="cat-count">320+ Styles</span>
+      <div class="cat-info">
+        <span class="cat-hindi">सूट & कुर्ती</span>
+        <span class="cat-en">Salwar Suits & Kurtis — Everyday</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURED ─── -->
+<section class="featured" id="featured">
+  <div class="collection-header fade-in">
+    <div>
+      <p class="section-label">Festive 2024 Edit</p>
+      <h2 class="section-title">New Arrivals</h2>
+    </div>
+    <a href="#" class="btn-primary" style="align-self: flex-end;">Shop All</a>
+  </div>
+
+  <div class="product-grid">
+    <!-- Product 1 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p1"></div>
+        <svg class="fabric-element" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="zari1" x="0" y="0" width="30" height="40" patternUnits="userSpaceOnUse">
+            <path d="M15,5 Q22,10 22,20 Q22,30 15,35 Q8,30 8,20 Q8,10 15,5Z" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+            <circle cx="15" cy="20" r="3" fill="#C9A84C" opacity="0.6"/>
+          </pattern></defs>
+          <rect width="200" height="280" fill="url(#zari1)"/>
+        </svg>
+        <span class="product-badge">New</span>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Banarasi Silk Saree</p>
+      <p class="product-type">Pure Katan Silk · Maroon & Gold</p>
+      <p class="product-price">₹12,500</p>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p2"></div>
+        <svg class="fabric-element" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="zari2" x="0" y="0" width="25" height="35" patternUnits="userSpaceOnUse">
+            <path d="M5,5 L20,5 L20,20 L5,20 Z" fill="none" stroke="#C9A84C" stroke-width="0.6"/>
+            <circle cx="12" cy="28" r="4" fill="none" stroke="#E8B4B8" stroke-width="0.7"/>
+          </pattern></defs>
+          <rect width="200" height="280" fill="url(#zari2)"/>
+        </svg>
+        <span class="product-badge" style="background: #1A3A5C; color: #FAF6EE;">Trending</span>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Anarkali Suit Set</p>
+      <p class="product-type">Georgette · Royal Blue & Silver</p>
+      <p class="product-price"><span class="product-price-old">₹8,200</span> ₹6,500</p>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p3"></div>
+        <svg class="fabric-element" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="zari3" x="0" y="0" width="35" height="35" patternUnits="userSpaceOnUse">
+            <path d="M17,2 L32,17 L17,32 L2,17 Z" fill="none" stroke="#C9A84C" stroke-width="0.7"/>
+            <circle cx="17" cy="17" r="5" fill="none" stroke="#C9A84C" stroke-width="0.6"/>
+          </pattern></defs>
+          <rect width="200" height="280" fill="url(#zari3)"/>
+        </svg>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Chanderi Kurti Palazzo</p>
+      <p class="product-type">Chanderi Cotton · Emerald</p>
+      <p class="product-price">₹4,800</p>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p4"></div>
+        <svg class="fabric-element" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="zari4" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+            <path d="M14,2 Q22,8 22,14 Q22,22 14,26 Q6,22 6,14 Q6,8 14,2Z" fill="none" stroke="#C9A84C" stroke-width="0.7"/>
+          </pattern></defs>
+          <rect width="200" height="280" fill="url(#zari4)"/>
+        </svg>
+        <span class="product-badge">Bestseller</span>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Bridal Lehenga Set</p>
+      <p class="product-type">Velvet & Zardozi · Rust & Gold</p>
+      <p class="product-price">₹45,000</p>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p5"></div>
+        <svg class="fabric-element" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="zari5" x="0" y="0" width="20" height="40" patternUnits="userSpaceOnUse">
+            <path d="M10,5 L10,35 M5,15 Q10,10 15,15 M5,25 Q10,30 15,25" fill="none" stroke="#C9A84C" stroke-width="0.7"/>
+          </pattern></defs>
+          <rect width="200" height="280" fill="url(#zari5)"/>
+        </svg>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Kanjivaram Saree</p>
+      <p class="product-type">Pure Silk · Purple & Zari</p>
+      <p class="product-price">₹18,000</p>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p6"></div>
+        <svg class="fabric-element" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="zari6" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="16" cy="16" r="8" fill="none" stroke="#C9A84C" stroke-width="0.7"/>
+            <circle cx="16" cy="16" r="3" fill="#C9A84C" opacity="0.4"/>
+          </pattern></defs>
+          <rect width="200" height="280" fill="url(#zari6)"/>
+        </svg>
+        <span class="product-badge" style="background: #E8B4B8; color: #2D0A1F;">Limited</span>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Phulkari Dupatta Set</p>
+      <p class="product-type">Hand Embroidered · Pink & Gold</p>
+      <p class="product-price"><span class="product-price-old">₹6,500</span> ₹5,200</p>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p7"></div>
+        <svg class="fabric-element" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="zari7" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M0,12 L12,0 L24,12 L12,24 Z" fill="none" stroke="#C9A84C" stroke-width="0.6"/>
+          </pattern></defs>
+          <rect width="200" height="280" fill="url(#zari7)"/>
+        </svg>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Chikankari Sharara</p>
+      <p class="product-type">Lucknowi Embroidery · Teal</p>
+      <p class="product-price">₹9,200</p>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p8"></div>
+        <svg class="fabric-element" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="zari8" x="0" y="0" width="30" height="50" patternUnits="userSpaceOnUse">
+            <path d="M15,5 Q24,15 24,25 Q24,38 15,45 Q6,38 6,25 Q6,15 15,5Z" fill="none" stroke="#C9A84C" stroke-width="0.7"/>
+            <circle cx="15" cy="25" r="4" fill="none" stroke="#E8B4B8" stroke-width="0.6"/>
+          </pattern></defs>
+          <rect width="200" height="280" fill="url(#zari8)"/>
+        </svg>
+        <span class="product-badge">New</span>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Patola Silk Saree</p>
+      <p class="product-type">Double Ikat Weave · Mustard</p>
+      <p class="product-price">₹22,000</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STORY ─── -->
+<section class="story" id="story">
+  <div class="story-text">
+    <p class="section-label">Our Story</p>
+    <h2 class="section-title">Woven from the<br/>Heart of India</h2>
+    <div class="gold-divider"></div>
+    <p class="section-sub">मनमोहे was born from a mother's love — of threads, looms, and the quiet pride of dressing a woman beautifully. Every piece in our collection is sourced directly from India's finest weaving communities.</p>
+    <p class="story-quote">"कपड़े में वो जादू है<br/>जो शब्दों से नहीं होता।"</p>
+    <p class="section-sub" style="font-style: italic; font-size: 0.88rem;">"Fabric holds a magic that words cannot."</p>
+    <div class="story-stats">
+      <div>
+        <span class="stat-num">12+</span>
+        <span class="stat-label">Years of Craft</span>
+      </div>
+      <div>
+        <span class="stat-num">740+</span>
+        <span class="stat-label">Styles Curated</span>
+      </div>
+      <div>
+        <span class="stat-num">35k+</span>
+        <span class="stat-label">Happy Customers</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-visual">
+    <!-- Decorative weave SVG art -->
+    <svg width="100%" height="100%" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- Mandala / decorative pattern -->
+      <g transform="translate(250, 300)">
+        <circle r="200" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.2"/>
+        <circle r="160" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.25"/>
+        <circle r="120" fill="none" stroke="#E8B4B8" stroke-width="0.6" opacity="0.2"/>
+        <circle r="80" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.3"/>
+        <circle r="40" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.4"/>
+        <circle r="8" fill="#C9A84C" opacity="0.5"/>
+        <!-- Petals -->
+        <g opacity="0.35">
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(30)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(60)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(90)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(150)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(210)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(240)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(270)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(300)"/>
+          <ellipse cx="0" cy="-100" rx="18" ry="36" fill="#C9A84C" transform="rotate(330)"/>
+        </g>
+        <!-- Outer decorative dots -->
+        <g opacity="0.5">
+          <circle cx="0" cy="-160" r="3" fill="#C9A84C" transform="rotate(0)"/>
+          <circle cx="0" cy="-160" r="3" fill="#C9A84C" transform="rotate(45)"/>
+          <circle cx="0" cy="-160" r="3" fill="#C9A84C" transform="rotate(90)"/>
+          <circle cx="0" cy="-160" r="3" fill="#C9A84C" transform="rotate(135)"/>
+          <circle cx="0" cy="-160" r="3" fill="#C9A84C" transform="rotate(180)"/>
+          <circle cx="0" cy="-160" r="3" fill="#C9A84C" transform="rotate(225)"/>
+          <circle cx="0" cy="-160" r="3" fill="#C9A84C" transform="rotate(270)"/>
+          <circle cx="0" cy="-160" r="3" fill="#C9A84C" transform="rotate(315)"/>
+        </g>
+        <!-- Lines -->
+        <g stroke="#C9A84C" stroke-width="0.5" opacity="0.2">
+          <line x1="-200" y1="0" x2="200" y2="0"/>
+          <line x1="0" y1="-200" x2="0" y2="200"/>
+          <line x1="-141" y1="-141" x2="141" y2="141"/>
+          <line x1="141" y1="-141" x2="-141" y2="141"/>
+        </g>
+      </g>
+      <!-- Hindi text as art -->
+      <text x="250" y="550" text-anchor="middle" font-family="Noto Serif Devanagari, serif" font-size="28" fill="#C9A84C" opacity="0.3" font-weight="700">परंपरा · शान · खूबसूरती</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials" id="testimonials">
+  <div class="test-header">
+    <p class="section-label" style="text-align: center;">Customer Love</p>
+    <h2 class="section-title" style="text-align: center;">What She Said</h2>
+    <p class="section-sub" style="text-align: center; margin: 16px auto 0;">From brides to bridesmaids, mothers to daughters — every woman has a story.</p>
+  </div>
+
+  <div class="test-grid">
+    <div class="test-card fade-in">
+      <div class="test-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="test-text">मेरी शादी में पहनी Banarasi साड़ी इतनी सुंदर थी, हर किसी ने पूछा कहाँ से ली। मनमोहे ने सच में मेरे दिल को मोह लिया!</p>
+      <div class="test-author">
+        <div class="test-avatar av1">प</div>
+        <div>
+          <p class="test-name">Priya Sharma</p>
+          <p class="test-city">New Delhi</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="test-card fade-in">
+      <div class="test-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="test-text">The Kanjivaram saree I ordered for Diwali was absolutely exquisite. The zari work, the silk quality — everything exceeded my expectations. This is luxury you can feel.</p>
+      <div class="test-author">
+        <div class="test-avatar av2">अ</div>
+        <div>
+          <p class="test-name">Ananya Krishnan</p>
+          <p class="test-city">Bengaluru</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="test-card fade-in">
+      <div class="test-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="test-text">Ordered a bridal lehenga for my daughter. The craftsmanship is unparalleled — the embroidery is hand-done, and the fit was perfect. We will be returning for every occasion.</p>
+      <div class="test-author">
+        <div class="test-avatar av3">स</div>
+        <div>
+          <p class="test-name">Sunita Agarwal</p>
+          <p class="test-city">Jaipur</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NEWSLETTER ─── -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-inner">
+    <p class="section-label">Stay Connected</p>
+    <h2 class="newsletter-title">New Arrivals.<br/>Exclusive Offers. First.</h2>
+    <p class="newsletter-sub">Join 35,000+ women who get early access to new collections, styling tips, and festive season offers — straight to their inbox.</p>
+    <div class="email-form">
+      <input type="email" class="email-input" placeholder="Your email address" />
+      <button class="email-btn">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="font-size: 2.2rem;">मनमोहे</a>
+      <p>Celebrating the art of Indian dressing. Curated sarees, lehengas, and suits from India's finest weavers — for every woman, every occasion.</p>
+      <div class="gold-divider" style="margin-top: 28px;"></div>
+      <p style="font-size: 0.8rem; color: rgba(250,246,238,0.35); margin-top: 12px;">परंपरा · शान · खूबसूरती</p>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Shop</p>
+      <ul class="footer-links">
+        <li><a href="#">Sarees</a></li>
+        <li><a href="#">Lehenga Choli</a></li>
+        <li><a href="#">Salwar Suits</a></li>
+        <li><a href="#">Kurtis</a></li>
+        <li><a href="#">Bridal Wear</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Help</p>
+      <ul class="footer-links">
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Fabric Care</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Connect</p>
+      <ul class="footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Pinterest</a></li>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#">Book Styling</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 मनमोहे. All rights reserved. Made with ♥ in India.</p>
+    <div class="social-links">
+      <a href="#" class="social-link">Ig</a>
+      <a href="#" class="social-link">Wa</a>
+      <a href="#" class="social-link">Yt</a>
+      <a href="#" class="social-link">Pt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Intersection observer for fade-in
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Hero saree model animation on load
+  document.addEventListener('DOMContentLoaded', () => {
+    const model = document.querySelector('.saree-model');
+    if (model) {
+      setTimeout(() => { model.style.animationPlayState = 'running'; }, 300);
+    }
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Wishlist toggle
+  document.querySelectorAll('.product-wish').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.querySelector('svg').style.fill = 
+        btn.querySelector('svg').style.fill === 'rgb(201, 168, 76)' ? 'none' : '#C9A84C';
+    });
+  });
+
+  // Newsletter
+  document.querySelector('.email-btn').addEventListener('click', () => {
+    const input = document.querySelector('.email-input');
+    if (input.value.includes('@')) {
+      input.value = '';
+      input.placeholder = '✓ Subscribed! Welcome to the family.';
+      input.style.color = '#C9A84C';
+      input.style.borderColor = 'rgba(201,168,76,0.5)';
+    }
+  });
+</script>
+</body>
+</html>
