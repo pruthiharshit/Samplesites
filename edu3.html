@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.Craze Career Institute | Excellence in Education</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0B2447; /* Deep Navy */
+            --accent-red: #C8102E; /* Crimson/Maroon matching logo */
+            --accent-gold: #F59E0B; /* Gold for highlights */
+            --bg-light: #F8FAFC;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --white: #FFFFFF;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- TOP BANNER --- */
+        .top-bar {
+            background-color: var(--accent-red);
+            color: var(--white);
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .top-bar-left i { margin-right: 8px; }
+        .top-bar-right span { margin-left: 20px; }
+
+        /* --- NAVBAR --- */
+        nav {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-red);
+            text-decoration: none;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo span { color: var(--primary-blue); }
+        .logo .tag {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-top: -5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--accent-red); }
+
+        .btn-cta {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(11, 36, 71, 0.2);
+        }
+
+        .btn-cta:hover {
+            background: var(--accent-red);
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(11, 36, 71, 0.85), rgba(11, 36, 71, 0.95)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2000&auto=format&fit=crop') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            color: var(--white);
+        }
+
+        .hero-content { max-width: 700px; }
+
+        .badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero h1 span { color: var(--accent-red); }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            color: #CBD5E1;
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* --- HIGHLIGHT STRIP --- */
+        .highlight-strip {
+            background: var(--accent-gold);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+            margin-top: -30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--primary-blue);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .highlight-item i {
+            font-size: 2rem;
+            color: var(--accent-red);
+        }
+
+        /* --- COURSES SECTION --- */
+        section { padding: 80px 5%; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px 30px;
+            border: 1px solid #E2E8F0;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-red);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .course-card:hover::before { transform: scaleX(1); }
+
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(11, 36, 71, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .course-card:hover .course-icon {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .course-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .course-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .subject-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: var(--bg-light);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            border: 1px solid #E2E8F0;
+        }
+
+        /* --- FEATURES SECTION --- */
+        .features-sec {
+            background: var(--primary-blue);
+            color: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            border-radius: 20px;
+            margin: 40px 5%;
+            padding: 60px;
+        }
+
+        .features-content h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .feature-list i {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .features-image {
+            position: relative;
+        }
+
+        .features-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #06162D; /* Darker Navy */
+            color: #94A3B8;
+            padding: 80px 5% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .footer-logo span { color: var(--accent-red); }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .footer-col ul a:hover { color: var(--accent-gold); }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: #CBD5E1;
+        }
+
+        .contact-info i {
+            color: var(--accent-red);
+            margin-top: 4px;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .features-sec {
+                grid-template-columns: 1fr;
+                padding: 40px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .highlight-strip {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            .nav-links, .btn-cta { display: none; } /* Hamburger needed for mobile */
+            .hero h1 { font-size: 2.5rem; }
+            .hero-buttons { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span><i class="fa-solid fa-location-dot"></i> #7, Bank Colony, Hisar Road, Sirsa</span>
+        </div>
+        <div class="top-bar-right">
+            <span><i class="fa-solid fa-phone"></i> 92546-20820, 77678-00001</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">
+            <div>
+                M.Craze<span>.</span>
+                <span class="tag">Career Institute</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#features">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="https://wa.me/919254620820" class="btn-cta" target="_blank">Book Free Demo</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge">12 Years of Spreading Confidence</span>
+            <h1>Producing Toppers For <br><span>Over a Decade.</span></h1>
+            <p>Sirsa's premier institute for NEET, IIT-JEE, and Foundation preparation. Join the legacy of excellence and secure your future with our expert faculty.</p>
+            <div class="hero-buttons">
+                <a href="#courses" class="btn-cta">Explore Courses</a>
+                <a href="#features" class="btn-outline">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Highlight Strip -->
+    <div class="highlight-strip">
+        <div class="highlight-item">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <span>5 Days Free Demo Classes</span>
+        </div>
+        <div class="highlight-item">
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Regular Test Series</span>
+        </div>
+        <div class="highlight-item">
+            <i class="fa-solid fa-comments"></i>
+            <span>Dedicated Doubt Sessions</span>
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <div class="section-header">
+            <h2>Our Premium Courses</h2>
+            <p>Comprehensive coaching programs tailored for competitive exams and board excellence.</p>
+        </div>
+
+        <div class="course-grid">
+            <!-- NEET -->
+            <div class="course-card">
+                <div class="course-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                <h3>NEET Medical</h3>
+                <p>Complete preparation for medical entrance exams with specialized focus on high-yield topics.</p>
+                <div class="subject-tags">
+                    <span class="tag">Physics</span>
+                    <span class="tag">Chemistry</span>
+                    <span class="tag">Biology</span>
+                </div>
+                <a href="#" style="color: var(--accent-red); font-weight: 600; text-decoration: none;">View Details &rarr;</a>
+            </div>
+
+            <!-- IIT-JEE -->
+            <div class="course-card">
+                <div class="course-icon"><i class="fa-solid fa-microchip"></i></div>
+                <h3>IIT-JEE Main & Adv.</h3>
+                <p>Rigorous coaching for engineering aspirants focusing on conceptual clarity and problem-solving.</p>
+                <div class="subject-tags">
+                    <span class="tag">Physics</span>
+                    <span class="tag">Chemistry</span>
+                    <span class="tag">Maths</span>
+                </div>
+                <a href="#" style="color: var(--accent-red); font-weight: 600; text-decoration: none;">View Details &rarr;</a>
+            </div>
+
+            <!-- Foundation -->
+            <div class="course-card">
+                <div class="course-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Foundation (9th & 10th)</h3>
+                <p>Build a strong academic base early on. Ideal for students aiming for future competitive exams.</p>
+                <div class="subject-tags">
+                    <span class="tag">Science</span>
+                    <span class="tag">Maths</span>
+                    <span class="tag">Board Prep</span>
+                </div>
+                <a href="#" style="color: var(--accent-red); font-weight: 600; text-decoration: none;">View Details &rarr;</a>
+            </div>
+
+            <!-- Commerce -->
+            <div class="course-card">
+                <div class="course-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Commerce (11th & 12th)</h3>
+                <p>Expert guidance for commerce students aiming for top board results and professional foundations.</p>
+                <div class="subject-tags">
+                    <span class="tag">Accounts</span>
+                    <span class="tag">B.Study</span>
+                    <span class="tag">Economics</span>
+                    <span class="tag">Maths</span>
+                </div>
+                <a href="#" style="color: var(--accent-red); font-weight: 600; text-decoration: none;">View Details &rarr;</a>
+            </div>
+            
+            <!-- B.Sc -->
+            <div class="course-card">
+                <div class="course-icon"><i class="fa-solid fa-flask"></i></div>
+                <h3>B.Sc. Classes</h3>
+                <p>Advanced tutoring for Bachelor of Science students ensuring deep subject mastery.</p>
+                <div class="subject-tags">
+                    <span class="tag">Higher Ed</span>
+                    <span class="tag">University Exams</span>
+                </div>
+                <a href="#" style="color: var(--accent-red); font-weight: 600; text-decoration: none;">View Details &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <div class="features-sec" id="features">
+        <div class="features-content">
+            <h2>Why Choose M.Craze Career Institute?</h2>
+            <p style="color: #CBD5E1; font-size: 1.1rem;">We don't just teach; we mentor. Our proven methodology has consistently produced top rankers in Sirsa for over a decade.</p>
+            
+            <ul class="feature-list">
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <strong>Free JEE-NEET Test Series</strong><br>
+                        <span style="color: #94A3B8; font-size: 0.95rem;">Available for every student to track progress effectively.</span>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <strong>Expert Faculty</strong><br>
+                        <span style="color: #94A3B8; font-size: 0.95rem;">Learn from specialists, including dedicated Biology coaching by Nishtha Bharti.</span>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <strong>Monthly Free Tests</strong><br>
+                        <span style="color: #94A3B8; font-size: 0.95rem;">Every 1st & 3rd Sunday of the month, open free test sessions.</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="features-image">
+            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=1000&auto=format&fit=crop" alt="Students in classroom">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">M.Craze<span>.</span></a>
+                <p style="margin-bottom: 20px;">Sirsa's trusted institute for IIT-JEE, NEET, Foundation, and Commerce classes. 12 Years of spreading confidence.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: var(--white); font-size: 1.2rem; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 5px;"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" style="color: var(--white); font-size: 1.2rem; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 5px;"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#features">About Us</a></li>
+                    <li><a href="#">Student Success</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Programs</h4>
+                <ul>
+                    <li><a href="#">NEET Preparation</a></li>
+                    <li><a href="#">IIT-JEE Main & Adv</a></li>
+                    <li><a href="#">Foundation (9th-10th)</a></li>
+                    <li><a href="#">Commerce Classes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> <span>#7, Bank Colony, Hisar Road, Sirsa, Haryana</span></li>
+                    <li><i class="fa-solid fa-phone"></i> <span>92546-20820<br>77678-00001<br>92555-20820</span></li>
+                    <li><i class="fa-solid fa-envelope"></i> <span>info@mcrazeinstitute.com</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 M.Craze Career Institute. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Action Button -->
+    <a href="https://wa.me/919254620820" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
