@@ -287,7 +287,7 @@
     }
     .cat-card:hover .cat-bg { transform: scale(1.06); }
     
-    /* Updated Categories backgrounds with real fabric images */
+    /* Category backgrounds with real fabric images */
     .cat-card:nth-child(1) .cat-bg { background: url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover; }
     .cat-card:nth-child(2) .cat-bg { background: url('https://images.unsplash.com/photo-1605763240000-7e93b172d754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover; }
     .cat-card:nth-child(3) .cat-bg { background: url('https://images.unsplash.com/photo-1584916201218-f4242ceb4809?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover; }
@@ -348,6 +348,7 @@
       position: relative;
       overflow: hidden;
       margin-bottom: 16px;
+      background: #eee;
     }
     .product-img-bg {
       position: absolute;
@@ -356,15 +357,15 @@
     }
     .product-card:hover .product-img-bg { transform: scale(1.04); }
     
-    /* Using gradient combinations resembling luxurious fabrics for products */
-    .p1 { background: linear-gradient(145deg, #7B2D4A, #3D1525); }
-    .p2 { background: linear-gradient(145deg, #1A3A5C, #0D2040); }
-    .p3 { background: linear-gradient(145deg, #3D5C1A, #1E2E0D); }
-    .p4 { background: linear-gradient(145deg, #5C3A1A, #2E1D0D); }
-    .p5 { background: linear-gradient(145deg, #4A1A5C, #250D2E); }
-    .p6 { background: linear-gradient(145deg, #5C1A2D, #2E0D16); }
-    .p7 { background: linear-gradient(145deg, #1A4A5C, #0D252E); }
-    .p8 { background: linear-gradient(145deg, #4A3A1A, #251D0D); }
+    /* ALL PRODUCTS NOW USE REAL FABRIC IMAGE SAMPLES */
+    .p1 { background: url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover; }
+    .p2 { background: url('https://images.unsplash.com/photo-1584433144859-1fbb045f54ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover; }
+    .p3 { background: url('https://images.unsplash.com/photo-1605763240000-7e93b172d754?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover; }
+    .p4 { background: url('https://images.unsplash.com/photo-1583391733958-d25e07fac044?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover; }
+    .p5 { background: url('https://images.unsplash.com/photo-1558244661-d248897f7bc4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover; }
+    .p6 { background: url('https://images.unsplash.com/photo-1584916201218-f4242ceb4809?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover; }
+    .p7 { background: url('https://images.unsplash.com/photo-1528458909338-b1f5d6f1f440?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover; }
+    .p8 { background: url('https://images.unsplash.com/photo-1555529733-0e67056058e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover; }
 
     .product-badge {
       position: absolute;
@@ -382,7 +383,7 @@
       position: absolute;
       top: 12px; right: 12px;
       width: 32px; height: 32px;
-      background: rgba(250,246,238,0.15);
+      background: rgba(250,246,238,0.7);
       backdrop-filter: blur(4px);
       border-radius: 50%;
       display: flex;
@@ -391,8 +392,8 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    .product-wish:hover { background: rgba(201,168,76,0.3); }
-    .product-wish svg { width: 14px; height: 14px; fill: none; stroke: white; stroke-width: 1.5; }
+    .product-wish:hover { background: rgba(201,168,76,0.9); }
+    .product-wish svg { width: 14px; height: 14px; fill: none; stroke: var(--burgundy); stroke-width: 1.5; }
 
     .product-name {
       font-family: 'Playfair Display', serif;
@@ -831,6 +832,7 @@
     <div class="product-card fade-in">
       <div class="product-img">
         <div class="product-img-bg p1"></div>
+        <!-- Note: SVG overlays have been removed so the real image is clear -->
         <span class="product-badge">New</span>
         <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
       </div>
@@ -874,6 +876,51 @@
       <p class="product-price">₹45,000</p>
     </div>
 
+    <!-- Product 5 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p5"></div>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Kanjivaram Saree</p>
+      <p class="product-type">Pure Silk · Purple & Zari</p>
+      <p class="product-price">₹18,000</p>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p6"></div>
+        <span class="product-badge" style="background: #E8B4B8; color: #2D0A1F;">Limited</span>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Phulkari Dupatta Set</p>
+      <p class="product-type">Hand Embroidered · Pink & Gold</p>
+      <p class="product-price"><span class="product-price-old">₹6,500</span> ₹5,200</p>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p7"></div>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Chikankari Sharara</p>
+      <p class="product-type">Lucknowi Embroidery · Teal</p>
+      <p class="product-price">₹9,200</p>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-bg p8"></div>
+        <span class="product-badge">New</span>
+        <div class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      </div>
+      <p class="product-name">Patola Silk Saree</p>
+      <p class="product-type">Double Ikat Weave · Mustard</p>
+      <p class="product-price">₹22,000</p>
+    </div>
   </div>
 </section>
 
@@ -1049,7 +1096,7 @@
   document.querySelectorAll('.product-wish').forEach(btn => {
     btn.addEventListener('click', () => {
       btn.querySelector('svg').style.fill = 
-        btn.querySelector('svg').style.fill === 'rgb(201, 168, 76)' ? 'none' : '#C9A84C';
+        btn.querySelector('svg').style.fill === 'rgb(45, 10, 31)' ? 'none' : '#2D0A1F';
     });
   });
 
