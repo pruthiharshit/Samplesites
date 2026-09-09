@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Classes Sirsa | The Topper's Factory</title>
-    <!-- Google Fonts for a Premium Academic Look -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <!-- Google Fonts: Outfit for modern headings, Inter for clean readability -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-navy: #0A192F; /* Deep premium navy */
-            --accent-red: #D90429; /* Energetic crimson red from logo */
-            --accent-gold: #FFB703; /* Highlight color for achievements */
-            --bg-light: #F8F9FA;
-            --text-dark: #2B2D42;
-            --text-gray: #6C757D;
-            --white: #FFFFFF;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Open Sans', sans-serif;
-            --transition: all 0.3s ease-in-out;
+            --brand-blue: #1E3A8A; /* Royal Blue from Shield */
+            --brand-red: #DC2626; /* Crimson from Ribbon */
+            --surface-light: #F8FAFC;
+            --surface-white: #FFFFFF;
+            --text-dark: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -35,643 +37,814 @@
 
         body {
             font-family: var(--font-body);
-            background-color: var(--bg-light);
+            background-color: var(--surface-light);
             color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* --- TOP BAR --- */
-        .top-bar {
-            background-color: var(--primary-navy);
-            color: var(--white);
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            font-family: var(--font-heading);
-            font-weight: 600;
-        }
-
-        .top-bar i { color: var(--accent-gold); margin-right: 8px; }
-        .top-bar-right span { margin-left: 20px; }
-
-        /* --- NAVBAR --- */
+        /* --- MODERN NAVBAR --- */
         nav {
-            background: var(--white);
-            padding: 15px 5%;
+            background: var(--surface-white);
+            padding: 16px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: var(--shadow-sm);
         }
 
-        .logo {
+        .brand-logo {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
 
-        .logo-main {
+        .brand-logo i {
+            font-size: 2rem;
+            color: var(--brand-blue);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-text .title {
             font-family: var(--font-heading);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: var(--primary-navy);
-            letter-spacing: -0.5px;
+            color: var(--text-dark);
+            line-height: 1.1;
         }
 
-        .logo-main span {
-            color: var(--accent-red);
+        .brand-text .title span {
+            color: var(--brand-red);
         }
 
-        .logo-sub {
+        .brand-text .subtitle {
             font-size: 0.75rem;
-            color: var(--text-gray);
-            font-weight: 700;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: -3px;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 32px;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--primary-navy);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
             transition: var(--transition);
         }
 
         .nav-links a:hover {
-            color: var(--accent-red);
+            color: var(--brand-blue);
         }
 
-        .btn-call {
-            background: var(--accent-red);
-            color: var(--white);
+        .nav-cta {
+            background: var(--brand-red);
+            color: var(--surface-white);
             padding: 10px 24px;
-            border-radius: 4px;
+            border-radius: 8px;
             text-decoration: none;
-            font-family: var(--font-heading);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(217, 4, 41, 0.2);
         }
 
-        .btn-call:hover {
-            background: var(--primary-navy);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(10, 25, 47, 0.2);
+        .nav-cta:hover {
+            background: #B91C1C;
+            box-shadow: var(--shadow-md);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- SPLIT HERO SECTION --- */
         .hero {
-            position: relative;
-            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop') center/cover;
-            height: 80vh;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            min-height: 85vh;
+            background: var(--surface-white);
+            padding: 40px 6% 0;
             align-items: center;
-            padding: 0 5%;
-            color: var(--white);
+            gap: 40px;
         }
 
-        .hero-content {
-            max-width: 800px;
-            z-index: 2;
+        .hero-text {
+            padding-bottom: 60px;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: var(--accent-gold);
-            color: var(--primary-navy);
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #EFF6FF;
+            color: var(--brand-blue);
             padding: 6px 16px;
-            border-radius: 30px;
-            font-family: var(--font-heading);
-            font-weight: 800;
+            border-radius: 50px;
             font-size: 0.85rem;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .pill i {
+            color: var(--brand-red);
         }
 
         .hero h1 {
             font-family: var(--font-heading);
             font-size: clamp(3rem, 5vw, 4.5rem);
-            line-height: 1.1;
             font-weight: 800;
-            margin-bottom: 20px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--text-dark);
         }
 
         .hero h1 span {
-            color: var(--accent-red);
+            background: linear-gradient(120deg, var(--brand-blue), #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             font-size: 1.15rem;
-            margin-bottom: 30px;
-            color: #E2E8F0;
-            max-width: 650px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 540px;
         }
 
-        .btn-outline {
-            display: inline-block;
-            border: 2px solid var(--white);
-            color: var(--white);
-            padding: 12px 28px;
-            border-radius: 4px;
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            background: var(--brand-blue);
+            color: var(--surface-white);
+            padding: 14px 32px;
+            border-radius: 8px;
             text-decoration: none;
-            font-family: var(--font-heading);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-left: 15px;
+            font-weight: 600;
+            font-size: 1rem;
             transition: var(--transition);
         }
 
-        .btn-outline:hover {
-            background: var(--white);
-            color: var(--primary-navy);
+        .btn-primary:hover {
+            background: #1E40AF;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
-        /* --- STATS STRIP --- */
-        .stats-strip {
-            background: var(--white);
-            padding: 30px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: -40px;
-            position: relative;
-            z-index: 10;
+        .btn-secondary {
+            background: var(--surface-white);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            padding: 14px 32px;
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            max-width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-            flex-wrap: wrap;
-            gap: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
         }
 
-        .stat-item {
+        .btn-secondary:hover {
+            border-color: var(--text-dark);
+            background: var(--surface-light);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: 90%;
+            object-fit: cover;
+            border-radius: 24px 24px 0 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Floating stat card on hero image */
+        .float-card {
+            position: absolute;
+            bottom: 40px;
+            left: -30px;
+            background: var(--surface-white);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
             display: flex;
             align-items: center;
             gap: 15px;
+            animation: float 4s ease-in-out infinite;
         }
 
-        .stat-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(217, 4, 41, 0.1);
-            color: var(--accent-red);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
-        .stat-text h4 {
+        .float-card i {
+            font-size: 2rem;
+            color: #F59E0B;
+        }
+
+        .float-card div h4 {
             font-family: var(--font-heading);
-            color: var(--primary-navy);
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+        .float-card div p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
         }
 
-        .stat-text p {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            font-weight: 600;
-            text-transform: uppercase;
+        /* --- STATS BAR --- */
+        .stats-bar {
+            background: var(--brand-blue);
+            padding: 40px 6%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            color: var(--surface-white);
         }
 
-        /* --- PROGRAMS SECTION --- */
-        section {
-            padding: 80px 5%;
-        }
-
-        .section-title {
+        .stat-block {
             text-align: center;
-            margin-bottom: 50px;
         }
 
-        .section-title h2 {
+        .stat-block h3 {
             font-family: var(--font-heading);
             font-size: 2.5rem;
             font-weight: 800;
-            color: var(--primary-navy);
+            color: #60A5FA;
+        }
+
+        .stat-block p {
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- SECTION HEADERS --- */
+        section {
+            padding: 100px 6%;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header .tag {
+            color: var(--brand-red);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 10px;
+            display: block;
         }
 
-        .section-title span {
-            color: var(--accent-red);
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            max-width: 500px;
+            line-height: 1.2;
         }
 
-        .grid-container {
+        /* --- PROGRAMS GRID --- */
+        .programs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
-        .card {
-            background: var(--white);
-            border: 1px solid #E9ECEF;
-            border-radius: 8px;
-            padding: 40px 30px;
-            text-align: center;
+        .program-card {
+            background: var(--surface-white);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+            border-left: 4px solid transparent;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border-color: var(--white);
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-left-color: var(--brand-blue);
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--accent-red);
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            color: var(--primary-navy);
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .card:hover i {
-            color: var(--accent-red);
-            transform: scale(1.1);
-        }
-
-        .card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-navy);
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .tags {
+        .program-icon {
+            width: 50px;
+            height: 50px;
+            background: #EFF6FF;
+            color: var(--brand-blue);
+            border-radius: 12px;
             display: flex;
+            align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .program-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .program-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .subject-pills {
+            display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
 
-        .tag {
-            background: #F1F3F5;
-            color: var(--primary-navy);
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 700;
+        .subject-pills span {
+            background: var(--surface-light);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
         }
 
-        /* --- HIGHLIGHT SECTION (UPSC/CLAT) --- */
-        .premium-highlight {
-            background: var(--primary-navy);
-            color: var(--white);
-            border-radius: 12px;
-            padding: 60px;
-            margin: 40px 5%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+        /* --- INTERACTIVE SCHEDULE SECTION --- */
+        .schedule-sec {
+            background: var(--surface-white);
         }
 
-        .highlight-content h2 {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 20px;
+        .schedule-container {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
         }
 
-        .highlight-content h2 span {
-            color: var(--accent-gold);
-        }
-
-        .highlight-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .highlight-list li {
+        .schedule-tabs {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
+            background: var(--surface-light);
+            border-bottom: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 20px;
+            font-family: var(--font-heading);
             font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            background: var(--surface-white);
+        }
+
+        .tab-btn.active {
+            color: var(--brand-blue);
+            background: var(--surface-white);
+            border-bottom: 3px solid var(--brand-blue);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 0;
+            animation: fadeIn 0.4s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .schedule-table th, .schedule-table td {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .schedule-table th {
+            background: var(--surface-white);
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .schedule-table tr:hover td {
+            background: var(--surface-light);
+        }
+
+        .time-badge {
+            background: #FEF2F2;
+            color: var(--brand-red);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
             font-weight: 600;
         }
 
-        .highlight-list i {
-            color: var(--accent-red);
-            font-size: 1.2rem;
+        /* --- UPSC BANNER --- */
+        .upsc-banner {
+            background: linear-gradient(135deg, var(--brand-blue), #111827);
+            border-radius: 24px;
+            padding: 60px;
+            margin: 0 6%;
+            color: var(--surface-white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
         }
 
-        .highlight-img img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .upsc-text h2 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+        .upsc-text p {
+            color: #94A3B8;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 24px;
+        }
+
+        .exam-tags {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .exam-tags span {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         /* --- FOOTER --- */
         footer {
-            background: #060F1E;
-            color: #ADB5BD;
-            padding: 80px 5% 30px;
+            background: var(--surface-white);
+            padding: 80px 6% 30px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 100px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 40px;
-            margin-bottom: 50px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .footer-logo {
             font-family: var(--font-heading);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: var(--white);
-            margin-bottom: 15px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
         }
-        
-        .footer-logo span { color: var(--accent-red); }
 
         .footer-col h4 {
-            color: var(--white);
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
+            font-weight: 600;
             margin-bottom: 20px;
-            text-transform: uppercase;
+            color: var(--text-dark);
         }
 
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
         .footer-col ul a {
-            color: #ADB5BD;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        .footer-col ul a:hover { color: var(--accent-gold); }
-
-        .contact-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .contact-list i {
-            color: var(--accent-red);
-            margin-top: 5px;
-        }
-
-        .socials {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .socials a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 4px;
-            color: var(--white);
-            transition: var(--transition);
-        }
-
-        .socials a:hover {
-            background: var(--accent-red);
-        }
-
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-            z-index: 100;
+            color: var(--text-muted);
             text-decoration: none;
             transition: var(--transition);
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
+        .footer-col ul a:hover {
+            color: var(--brand-blue);
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
         }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
-            .premium-highlight {
+            .hero {
                 grid-template-columns: 1fr;
-                padding: 40px;
+                text-align: center;
+                padding-top: 60px;
             }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .stats-strip {
-                justify-content: center;
-            }
+            .hero p { margin: 0 auto 40px; }
+            .hero-actions { justify-content: center; }
+            .hero-visual { display: none; }
+            .upsc-banner { flex-direction: column; text-align: center; padding: 40px; }
+            .exam-tags { justify-content: center; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            .top-bar {
-                flex-direction: column;
-                gap: 5px;
-                text-align: center;
-            }
-            .nav-links, .btn-call { display: none; }
-            .hero h1 { font-size: 2.5rem; }
-            .btn-outline { margin-left: 0; margin-top: 15px; display: block; width: max-content; }
+            .nav-links, .nav-cta { display: none; } /* Hamburger needed for production */
+            .hero h1 { font-size: 2.8rem; }
+            .schedule-table th, .schedule-table td { padding: 12px 10px; font-size: 0.85rem; }
             .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <span><i class="fa-solid fa-location-dot"></i> Chautala House Road, Sirsa</span>
-        </div>
-        <div class="top-bar-right">
-            <span><i class="fa-solid fa-phone"></i> Admission Helpline: 77000-02929</span>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav>
-        <a href="#" class="logo">
-            <div class="logo-main">LIVE CLASSES<span>.</span></div>
-            <div class="logo-sub">Sirsa</div>
+        <a href="#" class="brand-logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="brand-text">
+                <div class="title">LIVE CLASSES<span>.</span></div>
+                <div class="subtitle">Sirsa</div>
+            </div>
         </a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#programs">Programs</a></li>
+            <li><a href="#schedule">Schedule</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="tel:7700002929" class="btn-call">Call Now</a>
+        <a href="tel:7700002929" class="nav-cta">Call 77000-02929</a>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge">Admission Open 2026-27</div>
-            <h1>Welcome to <br><span>The Topper's Factory</span></h1>
-            <p>Leading coaching institute in Sirsa for 4th-12th Humanities, Commerce, and Science. Build your foundation for academic excellence and competitive success.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
-                <a href="#programs" class="btn-call" style="font-size: 0.9rem; padding: 12px 28px;">Explore Courses</a>
-                <a href="https://wa.me/917700002929" class="btn-outline">Join Demo Class</a>
+        <div class="hero-text">
+            <div class="pill"><i class="fa-solid fa-star"></i> The Topper's Factory</div>
+            <h1>Empowering students for <span>Academic Excellence.</span></h1>
+            <p>Sirsa's leading coaching institute for classes 4th to 12th. We combine modern teaching methodologies with expert faculty for Science, Commerce, and Humanities.</p>
+            <div class="hero-actions">
+                <a href="#programs" class="btn-primary">Explore Courses</a>
+                <a href="#schedule" class="btn-secondary">View Schedule</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" alt="Students studying">
+            <div class="float-card">
+                <i class="fa-solid fa-trophy"></i>
+                <div>
+                    <h4>No. 1</h4>
+                    <p>Institute in District</p>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Stats Strip -->
-    <div class="stats-strip">
-        <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-users-rectangle"></i></div>
-            <div class="stat-text">
-                <h4>Classes 4th to 12th</h4>
-                <p>All Subjects Covered</p>
-            </div>
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-block">
+            <h3>4th - 12th</h3>
+            <p>Classes Covered</p>
         </div>
-        <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
-            <div class="stat-text">
-                <h4>Quality Speaks</h4>
-                <p>No. 1 in District</p>
-            </div>
+        <div class="stat-block">
+            <h3>100%</h3>
+            <p>Quality Education</p>
         </div>
-        <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-book-open-reader"></i></div>
-            <div class="stat-text">
-                <h4>Specialized Faculty</h4>
-                <p>Academic Excellence</p>
-            </div>
+        <div class="stat-block">
+            <h3>All</h3>
+            <p>Streams Available</p>
+        </div>
+        <div class="stat-block">
+            <h3>5+</h3>
+            <p>Competitive Exams</p>
         </div>
     </div>
 
     <!-- Programs Section -->
     <section id="programs">
-        <div class="section-title">
-            <h2>Our Premium <span>Programs</span></h2>
-            <p>Comprehensive academic streams tailored for board examinations and holistic development.</p>
+        <div class="section-header">
+            <span class="tag">Curriculum</span>
+            <h2>Our specialized academic programs.</h2>
         </div>
 
-        <div class="grid-container">
-            <!-- Science -->
-            <div class="card">
-                <i class="fa-solid fa-flask"></i>
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-icon"><i class="fa-solid fa-atom"></i></div>
                 <h3>Science Stream</h3>
-                <p>Advanced coaching for 11th & 12th Science (Medical & Non-Medical) focusing on deep conceptual clarity.</p>
-                <div class="tags">
-                    <span class="tag">Physics</span>
-                    <span class="tag">Chemistry</span>
-                    <span class="tag">Biology</span>
-                    <span class="tag">Maths</span>
+                <p>Comprehensive preparation for 11th & 12th Science boards with a focus on core concepts and practical application.</p>
+                <div class="subject-pills">
+                    <span>Physics</span><span>Chemistry</span><span>Biology</span><span>Maths</span>
                 </div>
             </div>
 
-            <!-- Commerce -->
-            <div class="card">
-                <i class="fa-solid fa-chart-pie"></i>
+            <div class="program-card">
+                <div class="program-icon"><i class="fa-solid fa-chart-line"></i></div>
                 <h3>Commerce Stream</h3>
-                <p>Expert faculty delivering top-tier education for 11th & 12th Commerce to build strong financial foundations.</p>
-                <div class="tags">
-                    <span class="tag">Accounts</span>
-                    <span class="tag">Business Studies</span>
-                    <span class="tag">Economics</span>
+                <p>Expert-led classes designed to build a rock-solid foundation for future Chartered Accountants and business leaders.</p>
+                <div class="subject-pills">
+                    <span>Accountancy</span><span>Business Studies</span><span>Economics</span>
                 </div>
             </div>
 
-            <!-- Humanities -->
-            <div class="card">
-                <i class="fa-solid fa-landmark"></i>
+            <div class="program-card">
+                <div class="program-icon"><i class="fa-solid fa-book-open"></i></div>
                 <h3>Humanities / Arts</h3>
-                <p>Dedicated batches for Class 11th & 12th Arts, nurturing critical thinking and comprehensive subject knowledge.</p>
-                <div class="tags">
-                    <span class="tag">History</span>
-                    <span class="tag">Pol. Science</span>
-                    <span class="tag">Geography</span>
+                <p>Nurturing critical thinking and analytical skills for students pursuing careers in civil services, law, and arts.</p>
+                <div class="subject-pills">
+                    <span>History</span><span>Pol. Science</span><span>Geography</span>
                 </div>
             </div>
-            
-            <!-- Foundation -->
-            <div class="card">
-                <i class="fa-solid fa-seedling"></i>
-                <h3>Foundation (4th to 10th)</h3>
-                <p>Strong building blocks for junior classes. We cover all subjects to prepare students for future academic challenges.</p>
-                <div class="tags">
-                    <span class="tag">All Subjects</span>
-                    <span class="tag">Board Prep</span>
+
+            <div class="program-card">
+                <div class="program-icon"><i class="fa-solid fa-cubes"></i></div>
+                <h3>Foundation (4th-10th)</h3>
+                <p>Building the groundwork early. We cover all subjects to ensure students are ahead of the curve before entering high school.</p>
+                <div class="subject-pills">
+                    <span>All Subjects</span><span>NTSE Prep</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- UPSC / Competitive Highlight Section -->
-    <div class="premium-highlight">
-        <div class="highlight-content">
-            <h2>What after Class 10th?<br>You Can Become <span>IAS, IPS, Judge.</span></h2>
-            <p style="margin-bottom: 20px; font-size: 1.1rem; color: #E2E8F0;">Start your preparation early. We offer specialized foundation courses alongside your Class 11th and 12th curriculum.</p>
-            
-            <ul class="highlight-list">
-                <li><i class="fa-solid fa-check-circle"></i> UPSC Foundation starting from Class 11th</li>
-                <li><i class="fa-solid fa-check-circle"></i> Integrated CLAT Preparation</li>
-                <li><i class="fa-solid fa-check-circle"></i> Coaching for IPM & CUET</li>
-                <li><i class="fa-solid fa-check-circle"></i> School + Competition methodology</li>
-            </ul>
-            
-            <a href="tel:7700002929" class="btn-call" style="display: inline-block; margin-top: 25px; background: var(--accent-gold); color: var(--primary-navy);">Inquire Now</a>
+    <!-- Interactive Schedule Section -->
+    <section id="schedule" class="schedule-sec">
+        <div class="section-header">
+            <span class="tag">Timetable</span>
+            <h2>Upcoming Class Schedule.</h2>
         </div>
-        <div class="highlight-img">
-            <!-- Placeholder representing professional success/law/civil services -->
-            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop" alt="Competitive Exam Preparation">
+
+        <div class="schedule-container">
+            <div class="schedule-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'tab-science')">Class 11-12 (Science)</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-commerce')">Class 11-12 (Comm/Arts)</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-foundation')">Foundation (9th-10th)</button>
+            </div>
+
+            <!-- Tab 1: Science -->
+            <div id="tab-science" class="tab-content active">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Days</th>
+                            <th>Timing</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Physics</strong></td>
+                            <td>Mon, Wed, Fri</td>
+                            <td><span class="time-badge">4:00 PM - 5:30 PM</span></td>
+                            <td>Admissions Open</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chemistry</strong></td>
+                            <td>Tue, Thu, Sat</td>
+                            <td><span class="time-badge">4:00 PM - 5:30 PM</span></td>
+                            <td>Admissions Open</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mathematics</strong></td>
+                            <td>Mon to Fri</td>
+                            <td><span class="time-badge">5:45 PM - 7:00 PM</span></td>
+                            <td>Filling Fast</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biology</strong></td>
+                            <td>Mon, Wed, Fri</td>
+                            <td><span class="time-badge">5:45 PM - 7:00 PM</span></td>
+                            <td>Admissions Open</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tab 2: Commerce / Arts -->
+            <div id="tab-commerce" class="tab-content">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Days</th>
+                            <th>Timing</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Accountancy</strong></td>
+                            <td>Mon to Fri</td>
+                            <td><span class="time-badge">3:30 PM - 4:45 PM</span></td>
+                            <td>Admissions Open</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Economics</strong></td>
+                            <td>Mon, Wed, Fri</td>
+                            <td><span class="time-badge">5:00 PM - 6:00 PM</span></td>
+                            <td>Admissions Open</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Political Science</strong></td>
+                            <td>Tue, Thu, Sat</td>
+                            <td><span class="time-badge">3:30 PM - 4:45 PM</span></td>
+                            <td>New Batch</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tab 3: Foundation -->
+            <div id="tab-foundation" class="tab-content">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Days</th>
+                            <th>Timing</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Science (9th & 10th)</strong></td>
+                            <td>Mon, Wed, Fri</td>
+                            <td><span class="time-badge">4:30 PM - 5:30 PM</span></td>
+                            <td>Admissions Open</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mathematics (9th & 10th)</strong></td>
+                            <td>Tue, Thu, Sat</td>
+                            <td><span class="time-badge">4:30 PM - 5:30 PM</span></td>
+                            <td>Admissions Open</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPSC Highlight Banner -->
+    <div class="upsc-banner">
+        <div class="upsc-text">
+            <h2>What after Class 10th?</h2>
+            <p>Preparation starts from Class 11th. We offer integrated coaching alongside school curriculum for highly competitive career paths.</p>
+            <div class="exam-tags">
+                <span>IAS / IPS</span>
+                <span>Judge</span>
+                <span>CLAT</span>
+                <span>CUET / IPM</span>
+            </div>
+            <a href="tel:7700002929" class="btn-primary" style="background: var(--brand-red); display: inline-block;">Consult an Expert</a>
+        </div>
+        <div class="upsc-image" style="display: flex; gap: 20px;">
+            <i class="fa-solid fa-scale-balanced" style="font-size: 5rem; opacity: 0.8;"></i>
+            <i class="fa-solid fa-landmark" style="font-size: 5rem; opacity: 0.3;"></i>
         </div>
     </div>
 
@@ -680,21 +853,16 @@
         <div class="footer-grid">
             <div class="footer-about">
                 <div class="footer-logo">LIVE CLASSES<span>.</span></div>
-                <p style="margin-bottom: 20px;">The Topper's Factory. Leading Coaching Institute in Sirsa for 4th-12th Humanities, Commerce, and Science.</p>
-                <div class="socials">
-                    <a href="https://instagram.com/liveclasses_sirsa" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://youtube.com/@liveclassessirsa" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">The Topper's Factory. Leading Coaching Institute in Sirsa providing premium education for over a decade.</p>
             </div>
 
             <div class="footer-col">
                 <h4>Academics</h4>
                 <ul>
-                    <li><a href="#">Science Batch</a></li>
-                    <li><a href="#">Commerce Batch</a></li>
-                    <li><a href="#">Humanities / Arts</a></li>
-                    <li><a href="#">Foundation Classes</a></li>
+                    <li><a href="#">Classes 4th to 10th</a></li>
+                    <li><a href="#">Science (11th-12th)</a></li>
+                    <li><a href="#">Commerce (11th-12th)</a></li>
+                    <li><a href="#">Arts (11th-12th)</a></li>
                 </ul>
             </div>
 
@@ -702,7 +870,7 @@
                 <h4>Competitive</h4>
                 <ul>
                     <li><a href="#">UPSC Foundation</a></li>
-                    <li><a href="#">CLAT Preparation</a></li>
+                    <li><a href="#">CLAT Prep</a></li>
                     <li><a href="#">IPM Coaching</a></li>
                     <li><a href="#">CUET Classes</a></li>
                 </ul>
@@ -710,28 +878,37 @@
 
             <div class="footer-col">
                 <h4>Contact Us</h4>
-                <ul class="contact-list">
-                    <li>
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Chautala House Road,<br>Sirsa, Haryana</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-phone"></i>
-                        <span>77000-02929</span>
-                    </li>
+                <ul style="color: var(--text-muted); font-size: 0.95rem;">
+                    <li style="display: flex; gap: 10px;"><i class="fa-solid fa-location-dot" style="color: var(--brand-blue); margin-top: 4px;"></i> Chautala House Road, Sirsa</li>
+                    <li style="display: flex; gap: 10px;"><i class="fa-solid fa-phone" style="color: var(--brand-blue); margin-top: 4px;"></i> 77000-02929</li>
                 </ul>
             </div>
         </div>
 
-        <div class="copyright" style="text-align: center; font-size: 0.9rem;">
+        <div class="copyright">
             <p>&copy; 2026 Live Classes Sirsa. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Action Button -->
-    <a href="https://wa.me/917700002929" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
+    <!-- Script for Tabbed Schedule -->
+    <script>
+        function openTab(evt, tabId) {
+            // Hide all tab contents
+            let tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Remove active class from all buttons
+            let tabBtns = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+            
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
